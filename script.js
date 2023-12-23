@@ -5,6 +5,9 @@ const noBtn = document.querySelector('.no-btn');
 const icon = document.querySelector('i');
 const imageContainer = document.querySelector('.image-container');
 
+const wrapperRect = wrapper.getBoundingClientRect();
+const noBtnRect = noBtn.getBoundingClientRect();
+
 const images = [
     'https://i.pinimg.com/736x/65/54/68/6554687629bfd304bffb7b9f410acff6.jpg',
     'https://ih1.redbubble.net/image.2130200545.5747/st,small,845x845-pad,1000x1000,f8f8f8.jpg',
@@ -12,7 +15,7 @@ const images = [
 ];
 
 yesBtn.addEventListener('click', () => {
-    question.textContent = 'Nice';
+    question.textContent = 'I love you :") ';
 
     question.classList.add('animated-text');
 
@@ -52,3 +55,12 @@ function setRandomPosition(element) {
     element.style.left = randomX + 'px';
     element.style.top = randomY + 'px';
 }
+
+noBtn.addEventListener('mouseover', () => {
+    const i = Math.floor(Math.random() * (wrapperRect.width - noBtnRect.width)) + 1;
+    const j = Math.floor(Math.random() * (wrapperRect.height - noBtnRect.height)) + 1;
+
+    noBtn.style.left = i + 'px';
+    noBtn.style.top = j + 'px';
+
+})
